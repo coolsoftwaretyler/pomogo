@@ -34,7 +34,7 @@ func main() {
 			break
 		}
 		// Update the status
-		fmt.Printf("Minutes: %d Seconds: %d\n", timeRemaining.m, timeRemaining.s)
+		fmt.Printf("\rMinutes: %d", timeRemaining.m)
 	}
 	// When timer comes back, make a sound
 	err := beeep.Notify("pomogo", "Pomodoro over!", "assets/information.png")
@@ -66,7 +66,6 @@ func getTheTask() string {
 type countdown struct {
 	t int
 	m int
-	s int
 }
 
 func getTimeRemaining(t time.Time) countdown {
@@ -75,12 +74,10 @@ func getTimeRemaining(t time.Time) countdown {
 
 	total := int(difference.Seconds())
 	minutes := int(total/60) % 60
-	seconds := int(total % 60)
 
 	return countdown{
 		t: total,
 		m: minutes,
-		s: seconds,
 	}
 }
 
