@@ -43,7 +43,7 @@ func main() {
 	}
 	// When the timer completes, ask how it went
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("How did that go?")
+	fmt.Println("\nHow did that go?")
 	result, _ := reader.ReadString('\n')
 	result = strings.TrimSuffix(result, "\n")
 	setIntention(result)
