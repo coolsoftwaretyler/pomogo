@@ -8,11 +8,15 @@ import (
 	"strings"
 	"time"
 
+	"pomogo/configuration"
+
 	"github.com/gen2brain/beeep"
 )
 
 // Main function that runs when pomogo is executed
 func main() {
+	// Check for a config file 
+	configuration.CheckForConfigFile()
 	// Get the amount of time
 	timeInput := getTheTime()
 	timeInput = strings.TrimSuffix(timeInput, "\n")

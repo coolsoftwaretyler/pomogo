@@ -1,4 +1,4 @@
-module gitlab.com/ogdenstudios/pomogo
+module pomogo
 
 go 1.15
 
